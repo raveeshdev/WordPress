@@ -39,12 +39,17 @@ define( 'DB_COLLATE', '' );
 
 
 
-define('FORCE_SSL_ADMIN', true);
-// in some setups HTTP_X_FORWARDED_PROTO might contain 
-// a comma-separated list e.g. http,https
-// so check for https existence
-if (strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false)
-       $_SERVER['HTTPS']='on';
+define('FORCE_SSL_ADMIN', getEnvOr('FORCE_SSL_ADMIN', false));
+
+if (
+	defined('FORCE_SSL_ADMIN') &&
+	isset($_SERVER['HTTP_X_FORWARDED_PROTO']) &&
+	strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false
+):
+	$_SERVER['HTTPS'] = 'on';
+endif;
+
+
 /**#@+
  * Authentication unique keys and salts.
  *
@@ -56,6 +61,8 @@ if (strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false)
  *
  * @since 2.6.0
  */
+define('PROTOCOL', isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://');
+
 define( 'AUTH_KEY',         'put your unique phrase here' );
 define( 'SECURE_AUTH_KEY',  'put your unique phrase here' );
 define( 'LOGGED_IN_KEY',    'put your unique phrase here' );
