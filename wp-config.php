@@ -77,20 +77,7 @@ define('SECURE_AUTH_SALT', getEnvOr('SECURE_AUTH_SALT', 'eZ!^(BS:P$R&d/7PA9=4266
 define('LOGGED_IN_SALT', getEnvOr('LOGGED_IN_SALT', '-/iPx?1Uz:flP)-T2:@UZ~}cW32BoM}S_p;gfqF.ZI*bk!W,Pdy.d@m$<X{o:s@3'));
 define('NONCE_SALT', getEnvOr('NONCE_SALT', ']c5oeTN0OF{Tif5a7@h<GY#N-(X/P?&z@4JqdmkD(EU n&aO6=<Qfcn^f7nHf*9`'));
 
-define('WP_SITEURL', getEnvOr('WP_SITEURL', URL));
-define('WP_HOME', getEnvOr('WP_HOME', URL));
 
-define('DISALLOW_FILE_EDIT', getEnvOr('DISALLOW_FILE_EDIT', true));
-define('DISALLOW_FILE_MODS', getEnvOr('DISALLOW_FILE_MODS', true));
-define('AUTOMATIC_UPDATER_DISABLED', getEnvOr('AUTOMATIC_UPDATER_DISABLED', true));
-define('WP_DEFAULT_THEME', getEnvOr('WP_DEFAULT_THEME', 'wphh-default'));
-
-define('WP_DEBUG', getEnvOr('WP_DEBUG', false));
-define('WP_DEBUG_LOG', getEnvOr('WP_DEBUG_LOG', __DIR__.'/error.log'));
-define('WP_DEBUG_DISPLAY', getEnvOr('WP_DEBUG_DISPLAY', false));
-define('SAVEQUERIES', getEnvOr('WP_DEBUG_DISPLAY', false));
-
-define('DISABLE_WP_CRON', true);
 
 /**
  * Dinamic database check
