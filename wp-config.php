@@ -5,15 +5,7 @@
  * Based on heroku addons
  */
 
-function getEnvOr($key, $default = null) {
-	$value = getenv($key);
 
-	if (!empty($value) && in_array($value, ['true', 'false'])):
-		return json_decode($value);
-	endif;
-
-	return !empty($value) ? $value : $default;
-}
 
 if (!empty(getenv('JAWSDB_URL')) && !defined('WP_CLI')):
 	$url = parse_url(getenv('JAWSDB_URL'));
