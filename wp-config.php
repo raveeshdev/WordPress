@@ -52,9 +52,7 @@ endif;
  * to be used through out the app
  */
 
-if (!defined('ABSPATH')):
-	define('ABSPATH', dirname(__FILE__) . '/');
-endif;
+
 
 define('PROTOCOL', isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://');
 define('HOST', count(explode('.', $_SERVER['HTTP_HOST'])) <= 2 ? 'www.'.$_SERVER['HTTP_HOST'] : $_SERVER['HTTP_HOST']); // Root domain replication
