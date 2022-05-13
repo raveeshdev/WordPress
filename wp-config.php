@@ -4,6 +4,13 @@
  * Enviroment bootstraping
  * Based on heroku addons
  */
+function getEnvOr($key, $default = null) {
+	$value = getenv($key);
+
+	
+
+	return !empty($value) ? $value : $default;
+}
 
 
 
