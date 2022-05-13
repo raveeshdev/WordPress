@@ -57,7 +57,7 @@ endif;
 define('PROTOCOL', isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://');
 define('HOST', count(explode('.', $_SERVER['HTTP_HOST'])) <= 2 ? 'www.'.$_SERVER['HTTP_HOST'] : $_SERVER['HTTP_HOST']); // Root domain replication
 define('URL', PROTOCOL.HOST);
-define('PREFIX', getEnvOr('PREFIX', 'wphh_'));
+
 
 define('DB_CHARSET', getEnvOr('DB_CHARSET', 'utf8mb4'));
 define('DB_COLLATE', getEnvOr('DB_COLLATE', ''));
@@ -91,8 +91,11 @@ if (defined('DB_NAME') && DB_NAME === md5(HOST)):
 	$connection->query('CREATE DATABASE IF NOT EXISTS '.DB_NAME);
 endif;
 
-$table_prefix = PREFIX;
+$table_prefix = 'wp_';
 
+
+
+define( 'WP_DEBUG', false );
 /**
  * Conditional plugin activation
  * Check if an external file system is required
