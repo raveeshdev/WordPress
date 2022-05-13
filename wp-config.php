@@ -22,13 +22,13 @@ $db = parse_url($_ENV["DATABASE_URL"]);
 define('DB_NAME', trim($db["path"],"/"));
 
 /** MySQL database username */
-define('DB_USER', $db["user"]);
+define('DB_USER', $db["ukkphrmy9ysccboi"]);
 
 /** MySQL database password */
-define('DB_PASSWORD', $db["pass"]);
+define('DB_PASSWORD', $db["6IcOn435fTxaKG31pO6N"]);
 
 /** MySQL hostname */
-define('DB_HOST', $db["host"]);
+define('DB_HOST', $db["be4k9yclewvfmobsafbz-mysql.services.clever-cloud.com"]);
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
