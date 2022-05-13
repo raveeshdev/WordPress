@@ -62,6 +62,8 @@ endif;
  * @since 2.6.0
  */
 define('PROTOCOL', isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://');
+define('HOST', count(explode('.', $_SERVER['HTTP_HOST'])) <= 2 ? 'www.'.$_SERVER['HTTP_HOST'] : $_SERVER['HTTP_HOST']); // Root domain replication
+define('URL', PROTOCOL.HOST);
 
 define( 'AUTH_KEY',         'put your unique phrase here' );
 define( 'SECURE_AUTH_KEY',  'put your unique phrase here' );
